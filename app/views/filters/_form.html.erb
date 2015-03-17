@@ -1,0 +1,36 @@
+<%= form_for @filter do |f| %>
+  <% if @filter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@filter.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @filter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Filter name"%><br />
+    <%= f.text_field :FilterName%>
+  </div>
+
+  <div class="field">
+    <%= f.label :brightness %><br />
+    <%= f.number_field :brightness, in: 1...200 %>
+  </div>
+  <div class="field">
+    <%= f.label :hue %><br />
+    <%= f.number_field :hue ,in: 1...200%>
+  </div>
+  <div class="field">
+    <%= f.label "Blur Value"%><br />
+    <%= f.number_field :blur_value,in: 1...200 %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ImageMajik</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar-header">
+<div class="container">
+<%= link_to "ImageMajik", galleries_path, class: 'navbar-brand' %>
+<ul class="nav navbar-nav navbar-right">
+      
+
+  <% if user_signed_in? %>
+  <li><%= link_to current_user.full_name, galleries_path%></li>
+
+  <li>
+  <%= link_to "Home", galleries_path%></li>
+  
+  <li><%= link_to "Edit User Details", edit_user_registration_path %></li>
+  <li><%= link_to "Shared Gallery", galleries_share_path %></li>
+  <li><%= link_to "Add New Gallery", new_gallery_path %></li>
+  <li><%= link_to "Add New Filter", new_filter_path %></li>
+  <li><%= link_to "Trash Folder", images_trash_new_path %></li>
+  <li><%=link_to "Log Out", destroy_user_session_path, method: :delete%></li>
+  <%else%>
+  
+      
+      <li><%= link_to "Register", new_user_registration_path %></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+      <% end %>
+  
+</ul>
+
+</div>
+</div>
+</div>
+<div class="container">
+
+
+<%= yield %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+</div>
+
+</body>
+</html>

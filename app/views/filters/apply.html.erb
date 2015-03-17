@@ -1,0 +1,18 @@
+<h1>Modified Image</h1>
+ 	<%=image_tag @path%>
+ 	<div>
+<%=button_to "save", add_filter_to_path(image_id:@image.id,filterchoise:@filterchoise,gallery_id:@gallery_id, path:@path, option: "save")%></div> </br>
+
+<div>
+<%=button_to "overwrite", add_filter_to_path(image_id:@image.id,filterchoise:@filterchoise,gallery_id:@gallery_id, path:@path, option: "over")%>
+</div>
+<br>
+<div>
+<%=button_to "discard", filters_editimage_path(gallery_id:@gallery_id,image_id:@image.id), method: :get%>
+</div>
+
+
+
+
+
+

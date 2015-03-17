@@ -1,0 +1,15 @@
+<h1>Old Version</h1>
+<div class="container">
+<div class="row">
+<%if @children %>
+	<% @children.each do |child|%>
+	<div class="col-xs-1 col-sm-1 col-md-4">
+<div class="well">
+	
+	<%= image_tag child.picture_url.to_s%>
+	<div><%= child.imageName%></div>
+	</div></div>
+	<%end%>
+	
+<%end%>
+</div></div>

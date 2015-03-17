@@ -1,0 +1,35 @@
+<div class="page_header">
+<h1><%=@gallery.name%></h1></div>
+<p class="notice"><%= notice %></p>
+<%= link_to 'Upload New Image', new_gallery_image_path(@gallery.id) %>
+
+<div class="container">
+<div class="row">
+<%= form_tag images_select_path do%>
+  <% @images.each do |image| %>
+
+<div class="col-xs-1 col-sm-1 col-md-3">
+<div class="well">
+  		<%= link_to [@gallery,image] do %>
+ 			 <%= image_tag(image.picture_url(:thumb)) %>
+		<% end%>    
+        
+        
+        <div><%= check_box_tag  'image_ids[]',image.id %></div>
+        <div><%= link_to 'Show', [@gallery,image] %> |
+        <%= link_to 'Edit', filters_editimage_path(gallery_id:@gallery.id,image_id:image.id) %> |
+        <%= link_to 'version', images_version_path(image_id:image.id) %> |
+        <%= link_to 'Trash', [@gallery,image], method: :delete %>
+        
+        </div>
+    </div></div>
+  <%end%>
+  
+  </div>
+  <%= submit_tag "Share" %>
+  </div>
+  
+  <%end%>
+</div>
+
+

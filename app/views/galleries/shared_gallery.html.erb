@@ -1,0 +1,6 @@
+<h1>Shared Gallery</h1>
+<%if @images%>
+	<% @images.each do |img|%>
+	<%= image_tag img.picture_url%>
+	<%end%>
+<%end%>

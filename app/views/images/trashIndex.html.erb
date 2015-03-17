@@ -1,0 +1,22 @@
+<div class="page_header"><h1>My Trash Folder</h1></div>
+<div> <%= link_to 'Empty Trash',images_emptytrash_path,method: :post %></div>
+<div class="container">
+<div class="row">
+<%if @images %>
+  <% @images.each do |image| %>
+        
+        <div class="col-xs-1 col-sm-1 col-md-3">
+        <div class="well">
+        <%= link_to [@gallery,image] do %> 
+        	<%= image_tag(image.picture_url(:thumb))%>
+        <%end%>
+        <div><%=image.imageName%></div>
+        <div><%= link_to 'Restore', restore_path(image), method: :post %>        
+        
+    </div>
+  </div>
+  <%end%>
+ <%end%>
+</div>
+
+</div>

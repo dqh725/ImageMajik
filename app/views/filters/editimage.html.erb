@@ -1,0 +1,22 @@
+<h1>Choose to apply a Filter</h1>
+<p>
+<div><h2><strong>Image:</strong>
+	<%= @image.imageName %></h2></div>
+	
+	<%= image_tag @image.picture_url.to_s  if @image.picture?%>
+  		<div>
+			<% @path.each do |path|%>
+			<%= link_to filters_apply_path(image_id:@image.id, filterchoise:path[1],gallery_id:@gallery_id) do %>
+			<%if @image.picture.size>10000%>
+ 			<%= image_tag path[0], size: "100x100"%>
+ 			<%else%>
+ 			<%= image_tag path[0]%>
+			<% end end end%>
+
+		</div>
+
+</p>
+<font size="6">
+<br>
+<%= link_to 'Add new Filter', new_filter_path%>
+</font>

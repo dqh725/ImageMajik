@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <strong>Image:</strong>
+<%= image_tag @image.picture_url.to_s if@image.picture?%>
+</p>
+<h1>  <%= @image.imageName %></h1>
+
+<%= link_to 'Edit', filters_editimage_path(gallery_id:@gallery.id,image_id:@image.id) %> |
+<%= link_to 'Back', @gallery %>

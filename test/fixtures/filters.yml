@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blur_value: 1
+  brightness: 1
+  hue: 1
+
+two:
+  blur_value: 1
+  brightness: 1
+  hue: 1

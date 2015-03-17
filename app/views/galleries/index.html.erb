@@ -1,0 +1,18 @@
+<div class="page_header"><h1>My Gallery Page</h1></div>
+
+<div class="container">
+<div class="row">
+
+  <% @galleries.each do |gallery| %>
+        
+        <div class="col-xs-1 col-sm-1 col-md-3">
+        <div class="well">
+        <%= link_to gallery.name, gallery %> |
+        <%= link_to 'Delete', gallery, method: :delete, data: { confirm: 'Are you sure?' } %>        
+        
+    </div>
+  </div>
+  <%end%>
+</div>
+
+</div>

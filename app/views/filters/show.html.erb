@@ -1,0 +1,12 @@
+<div class="page_header"><h1>All Filters</h1></div>
+
+<div>
+  <% @filters.each do |filter| %>
+        
+        <div> <%= filter.FilterName%> |
+        <%= link_to 'Delete', filter, method: :delete, data: { confirm: 'Are you sure?' } %>        
+        </div>
+    
+  
+  <%end%>
+</div>

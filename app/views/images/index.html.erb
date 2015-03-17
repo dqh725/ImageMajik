@@ -1,0 +1,22 @@
+<div class="page_header"><h1>My Photos</h1></div>
+<h1>Gallery</h1>
+
+<div>
+  <% @images.each do |image| %>
+
+  		<%= link_to image do %>
+ 			 <%= image_tag(image.picture_url(:thumb)) %>
+		<% end%>    
+        
+        
+        <div><%= link_to 'Show', @gallery%> |
+        <%= link_to 'Edit', filters_editimage_path(@gallery,image) %> |
+        <%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+        </div>
+    
+  <%end%>
+</div>
+
+
+<%= link_to 'New Image', new_gallery_image_path %>
