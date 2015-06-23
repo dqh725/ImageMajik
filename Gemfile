@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'carrierwave'
 gem 'mini_magick','3.8.0'
-gem 'rake', '10.4.2'
+gem 'ruby','2.2.0'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
