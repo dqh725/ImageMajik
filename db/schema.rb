@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20141019204434) do
     t.string   "picture"
     t.string   "imageName"
     t.integer  "gallery_id"
-    t.integer  "parent_id"
     t.boolean  "inTrash"
   end
 
